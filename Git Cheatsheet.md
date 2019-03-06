@@ -13,7 +13,7 @@ git reset --hard
 git config credential.helper store
 ```
 
-## Get from origin mater
+## Get from origin master
 ```
 git pull origin master
 ```
