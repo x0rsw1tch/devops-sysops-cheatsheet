@@ -8,6 +8,10 @@ git checkout -- .  (or replace . with filename)
 git reset --hard
 ```
 
+## Store Username/Password
+```
+git config credential.helper store
+```
 
 ## Get from origin mater
 ```
