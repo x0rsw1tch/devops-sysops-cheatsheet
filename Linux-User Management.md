@@ -5,4 +5,5 @@
 ```
 usermod -a -G group_name user_name
 ```
+---
 

@@ -4,8 +4,12 @@
 ```
 systemctl daemon-reload
 ```
+---
+
 
 ## Load Last Errors
 ```
 journalctl -xe
 ```
+---
+
