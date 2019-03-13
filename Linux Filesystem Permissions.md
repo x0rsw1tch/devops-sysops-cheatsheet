@@ -46,6 +46,7 @@ getfacl /path/to/dir
 ### Set ACL Permissions
 
 Set Default Group Bit: `chmod -R g+s /path/to/dir`
+
 Set New File/Directory Mask: `setfacl -dRm u::rwx,g::rwx,o::rx /path/to/dir`
 
 > Note: ext4 and most other file systems ignore owner mask for some reason
