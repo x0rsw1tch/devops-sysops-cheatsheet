@@ -44,7 +44,9 @@ tree -d -L 1
 du -sk * | sort -nr | head -10
 ```
 > `du -sk *`: Lists file sizes followed by file name
+
 > `sort -nr`: Sort by size (descending)
+
 > `head -10`: Only show top 10
 ---
 
