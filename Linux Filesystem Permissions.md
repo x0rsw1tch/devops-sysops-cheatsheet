@@ -30,6 +30,14 @@ Add GROUP execute: chmod -R g+x .
 Add ALL execute: chmod -R o+x .
 ```
 
+### Update file permissions for any file matching a certain extension
+```
+find -iname *.css -print0 | xargs -0 chmod 775
+```
+
+
+
+
 ### Show ACL Permissions
 ```
 getfacl /path/to/dir

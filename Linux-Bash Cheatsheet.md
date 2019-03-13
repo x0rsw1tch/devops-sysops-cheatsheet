@@ -20,7 +20,49 @@ mkdir -p create/all/these/directories
 du -sh .
 ```
 
-## File Viewer
+### Clone Directory
+```
+cp -R dirtocopy/ newdir/
+```
+
+### Display Directory Tree
+```
+tree -d -L 1
+```
+> `-d`: Only show directories
+> `-L`: Determines how many levels deep to traverse
+
+### Display 10 biggest files in directory
+```
+du -sk * | sort -nr | head -10
+```
+> `du -sk *`: Lists file sizes followed by file name
+> `sort -nr`: Sort by size (descending)
+> `head -10`: Only show top 10
+
+### Show last modified files recursively
+```
+find . -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -f2- -d" "
+```
+
+### Show total size of directory
+```
+du -cah | grep total
+```
+
+### Get the last 5 listings in a directory,  _in descending order (-r) by date (-t)_
+```
+ls -ltr | head -5
+```
+### Find text in file
+> In root of search dir:
+```
+grep -lir "{search}"
+```
+> e.g.: `grep -lir "@todo"`
+
+
+### File Viewer
 ```
 less path/to/file
 ```
@@ -43,6 +85,13 @@ sed -i "/String to replace/c Replaced text" path/to/file
 ```
 touch /path/to/file
 ```
+
+### Create Symbolic Link
+```
+ln -s /point/to/here name_of_symlink
+```
+> Note: You can replace name_of_symlink with `.` to just use the target path directory name
+
 
 ### Remove (Symbolic) Link
 ```
