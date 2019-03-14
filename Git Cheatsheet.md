@@ -16,6 +16,13 @@ git reset --hard
 ---
 
 
+### Windows Line Break nonsense
+```
+git config core.filemode false
+git config core.autocrlf true
+```
+
+
 ### Store Username/Password
 ```
 git config credential.helper store
