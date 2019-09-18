@@ -14,18 +14,24 @@ With Explanation
 getsebool -a
 ```
 
-## Change security context, accepts wildcards
+## Change security context, accepts wildcards (Requires absolute path)
 ```
 semanage fcontext -a -t context_name /path
 ```
 ---
 
 
-## Commits change from fcontext (use -r for recursive)
+## Commits change from fcontext (use -r for recursive, requires absolute path)
 ```
 restorecon -v /path
 ```
 ---
+
+### Example: Security Context: Allow apache read/write to directories/files, Persistent Change
+```
+semanage fcontext -a -t httpd_sys_rw_content_t "/var/www/html/app(/.*)?"
+restorecon -R -v /var/www/html/app
+```
 
 
 ## SELinux Audit Log
