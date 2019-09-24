@@ -1,5 +1,11 @@
 # Letsencrypt Cheatsheet
 
+### Reverse Proxy with custom webroot
+```
+certbot certonly --webroot -w /path/to/app/root -d example.com
+```
+---
+
 
 ### Create pkcs12 Certificate package from LE Certificate Files
 ```
