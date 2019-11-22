@@ -49,10 +49,11 @@ Create Password File and setup first user: `htpasswd -c /etc/httpd/.htpasswd <us
 ### Allow multiple domains for CORS
 
 ```
-<IfModule mod_headers.c>
-	SetEnvIfNoCase Origin "http(s)?://(www\.)?(domain1.com|domain2.com)(:\d+)?$" AccessControlAllowOrigin=$0
+ <IfModule mod_headers.c>
+	SetEnvIfNoCase Origin "http(s)?://(www\.)?(domain1.com|domain2.com|domain3.com)(:\d+)?$" AccessControlAllowOrigin=$0
 	Header set Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
 	Header set Access-Control-Allow-Credentials true
+	RequestHeader set "X-Forwarded-Proto" "https"
 </IfModule>
 ```
 ---

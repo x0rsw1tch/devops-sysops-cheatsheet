@@ -6,6 +6,10 @@ certbot certonly --webroot -w /path/to/app/root -d example.com
 ```
 ---
 
+### Delete Certificate
+```
+certbot delete --cert-name example.com
+```
 
 ### Create pkcs12 Certificate package from LE Certificate Files
 ```
