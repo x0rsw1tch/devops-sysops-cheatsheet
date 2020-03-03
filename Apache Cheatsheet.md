@@ -26,6 +26,25 @@ Header always set Strict-Transport-Security "max-age=63072000; includeSubdomains
 ---
 
 
+### Allow Cross-site scripting for multiple domains
+```
+<IfModule mod_headers.c>
+	SetEnvIfNoCase Origin "http(s)?://(www\.)?(dev.example.com|shared.example.com|www.example.com|api.example.com|)(:\d+)?$" AccessControlAllowOrigin=$0
+	Header set Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
+	Header set Access-Control-Allow-Credentials true
+	RequestHeader set "X-Forwarded-Proto" "https"
+</IfModule>
+```
+---
+
+### Reverse Proxy: Add X-Forwarded-Proto
+```
+<IfModule mod_headers.c>
+	RequestHeader set "X-Forwarded-Proto" "https"
+</IfModule>
+```
+---
+
 ### Basic Authentication on Reverse Proxy Setup
 
 Create Password File and setup first user: `htpasswd -c /etc/httpd/.htpasswd <username>`
