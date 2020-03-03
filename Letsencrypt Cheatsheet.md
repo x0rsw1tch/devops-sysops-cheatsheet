@@ -6,6 +6,11 @@ certbot certonly --webroot -w /path/to/app/root -d example.com
 ```
 ---
 
+### Force Certificate Renewal
+```
+certbot renew --force-renewal
+```
+
 ### Delete Certificate
 ```
 certbot delete --cert-name example.com
