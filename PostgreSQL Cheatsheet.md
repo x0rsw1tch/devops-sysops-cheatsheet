@@ -15,3 +15,8 @@ CREATE DATABASE "dbname" WITH OWNER = owner OTHER PARAMETERS;
 \q
 psql -d dbname -f /opt/dotcms2.sql
 ```
+
+### Dump table as SQL commands (optional output to file)
+```
+pg_dump --table=export_table --data-only --column-inserts my_database > data.sql
+```
